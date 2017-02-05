@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     root to: 'battles#index'
 
     resources :battles
+    resources :news_articles, path: :news
   end
 end

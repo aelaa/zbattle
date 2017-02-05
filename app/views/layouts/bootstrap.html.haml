@@ -19,7 +19,7 @@
 
 
   %body
-    .navbar.navbar-default.navbar-static-top
+    .navbar.navbar-inverse.navbar-static-top
       .container
         %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
           %span.icon-bar
@@ -31,6 +31,10 @@
             %li= link_to "Новости", news_path
             %li= link_to "Баттлы", battles_path
             %li= link_to "Стримы", streams_path
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to "Регистрация", new_user_path
+            %li= link_to "Войти", new_session_path
+
 
     .container
       .row

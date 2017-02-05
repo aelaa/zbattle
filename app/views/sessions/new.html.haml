@@ -1,16 +1,12 @@
-= form_for :login, url: session_path do |f|
-  - if defined? errors and errors.any?
+= bootstrap_form_for :login, url: session_path do |f|
+  - if defined? errors
     #error_explanation
-      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
       %ul
-        - @user.errors.full_messages.each do |msg|
-          %li= msg
+        %li= errors
 
   .field
-    = f.label :login
-    = f.text_field :login
+    = f.text_field :login, label: 'Логин'
   .field
-    = f.label :password
-    = f.text_field :password
+    = f.password_field :password, label: 'Пароль'
   .actions
     = f.submit 'Войти'

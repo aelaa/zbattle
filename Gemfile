@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'haml'
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap_form'
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-vkontakte'

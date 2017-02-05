@@ -10,13 +10,13 @@ class StaticController < ApplicationController
 
   def battles
     render locals: {
-      news: Battle.all
+      battles: Battle.all
     }
   end
 
   def streams
     render locals: {
-      news: Stream.all
+      streams: Stream.all
     }
   end
 end

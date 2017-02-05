@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :check_current_user, only: [:edit, :update]
 
   def index
     render locals: { users: User.all }
@@ -13,32 +14,31 @@ class UsersController < ApplicationController
   end
 
   def edit
-    render locals: { user: User.find(params[:id]) }
+    render locals: { user: current_user }
   end
 
   def create
     user = User.new(user_params)
 
     if user.save
-      redirect_to user, notice: 'User was successfully created.'
+      force_login(user)
+      redirect_to root_path, notice: 'Добро пожаловать, ' + user.name
     else
       render :new, locals: { user: user }
     end
   end
 
   def update
-    user = User.find(params[:id])
-
-    if user.update(user_params)
-      redirect_to user, notice: 'User was successfully updated.'
+    if current_user.update(user_params)
+      redirect_to current_user, notice: 'User was successfully updated.'
     else
-      render :edit, locals: { user: user }
+      render :edit, locals: { user: current_user }
     end
   end
 
-  # DELETE /users/1
-  def destroy
-    User.find(params[:id]).destroy
-    redirect_to users_url, notice: 'User was successfully destroyed.'
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :surname, :login, :password, :city)
   end
 end

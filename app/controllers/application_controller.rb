@@ -5,5 +5,9 @@ class ApplicationController < ActionController::Base
 
   include Auth
 
+  def check_current_user
+    redirect_to root_path and return unless current_user
+  end
+
   layout 'bootstrap'
 end

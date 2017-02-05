@@ -9,4 +9,10 @@ Rails.application.routes.draw do
 
   resources :users
   resource :session, except: [:edit, :update]
+
+  namespace :admin do
+    root to: 'battles#index'
+
+    resources :battles
+  end
 end

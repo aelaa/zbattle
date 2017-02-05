@@ -13,4 +13,8 @@ module Auth
   def current_user
     @current_user ||= User.find_by(id: session[:user])
   end
+
+  def current_admin
+    @current_admin ||= User.admins.find_by(id: session[:user])
+  end
 end

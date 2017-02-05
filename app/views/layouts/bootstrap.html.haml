@@ -29,6 +29,8 @@
             %li= link_to 'Стримы', streams_path
           %ul.nav.navbar-nav.navbar-right
             - if current_user
+              - if current_admin
+                %li= link_to 'Админка', admin_root_path
               %li= link_to 'Привет, ' + current_user.name.to_s, root_path
               %li= link_to 'Выйти', session_path, method: :delete
             - else

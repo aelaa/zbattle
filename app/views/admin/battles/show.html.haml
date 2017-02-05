@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b Имя:
+  = battle.name
+%p
+  %b Описание:
+  = battle.description
+%p
+  %b Дата окончания:
+  = battle.deadline
+
+= link_to 'Изменить', edit_admin_battle_path(battle)

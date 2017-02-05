@@ -1,0 +1,27 @@
+%h1 Батлы
+
+= link_to 'Новый батл', new_admin_battle_path
+
+%table
+  %thead
+    %tr
+      %th Имя
+      %th Описание
+      %th Дата окончания
+      %th
+      %th
+      %th
+
+  %tbody
+    - battles.each do |battle|
+      %tr
+        %td= battle.name
+        %td= battle.description
+        %td= battle.deadline
+        %td= link_to 'Show', admin_battle_path(battle)
+        %td= link_to 'Edit', edit_admin_battle_path(battle)
+        %td= link_to 'Destroy', admin_battle_path(battle), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+

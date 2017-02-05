@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  timeout: 5000
+
+development:
+  <<: *default
+  database: zbattle-development
+
+test:
+  <<: *default
+  database: zbattle-test
+
+production:
+  <<: *default
+  database: zbattle-production

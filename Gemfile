@@ -15,6 +15,7 @@ gem 'bootstrap_form'
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-vkontakte'
+gem 'rails_12factor'
 
 gem 'unicorn'
 

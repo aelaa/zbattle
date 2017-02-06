@@ -1,0 +1,8 @@
+.container.show-page
+  .row
+    .col-lg-3
+    .col-lg-4
+      %h1= battle.name
+      - if battle.current?
+        %h1 participate
+    .col-lg-5

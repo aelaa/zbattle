@@ -1,5 +1,7 @@
 class Battle < ActiveRecord::Base
-  def current
-    where('deadline < ?', DateTime.now)
+  scope :current, -> { where('deadline > ?', DateTime.now) }
+
+  def current?
+    deadline > DateTime.now
   end
 end

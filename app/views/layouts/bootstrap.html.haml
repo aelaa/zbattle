@@ -15,6 +15,7 @@
 
 
   %body
+    .favorite-works
     .navbar.navbar-inverse.navbar-static-top
       .container
         %button.navbar-toggle(type='button' data-toggle='collapse' data-target='.navbar-responsive-collapse')
@@ -38,9 +39,9 @@
               %li= link_to 'Войти', new_session_path
 
 
-    .container
+    .container.main
       .row
-        .col-lg-9
+        .col-lg-12
           = bootstrap_flash
           = yield
 

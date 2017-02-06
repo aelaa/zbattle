@@ -9,4 +9,24 @@
 footer {
   position: absolute;
   bottom: 0px;
+  height: 100px;
+  width: 100%;
+  background-color: black;
+}
+
+.favorite-works {
+  height: 200px;
+}
+
+.navbar {
+  height: 75px;
+}
+
+.main {
+  top: 275px;
+}
+
+.show-page {
+  width: 100%;
+  background-color: #616161;
 }

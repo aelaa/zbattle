@@ -22,11 +22,15 @@ footer {
   height: 75px;
 }
 
-.main {
+main {
   top: 275px;
 }
 
 .show-page {
   width: 100%;
   background-color: #616161;
+}
+
+.login-buttons {
+  margin-right: 0;
 }

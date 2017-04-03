@@ -16,27 +16,35 @@
 
   %body
     .favorite-works
+      #myCarousel.carousel.slide
+        -# { data: { ride: "carousel" }}
+        .item
+          - favorites.flatten.each_with_index do |url, index|
+            .item-item{style: "background-image: url(#{image_url 'cats/' + url})"}
+              .info
+                %p info
+
     .navbar.navbar-inverse.navbar-static-top
       .container
         %button.navbar-toggle(type='button' data-toggle='collapse' data-target='.navbar-responsive-collapse')
           %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand(href='#') Zbattle
-        .navbar-collapse.collapse.navbar-responsive-collapse
-          %ul.nav.navbar-nav
-            %li= link_to 'Новости', news_path
-            %li= link_to 'Баттлы', battles_path
-            %li= link_to 'Стримы', streams_path
-          %ul.nav.navbar-nav.navbar-right
-            - if current_user
-              - if current_admin
-                %li= link_to 'Админка', admin_root_path
-              %li= link_to 'Привет, ' + current_user.name.to_s, root_path
-              %li= link_to 'Выйти', session_path, method: :delete
-            - else
-              %li= link_to 'Регистрация', new_user_path
-              %li= link_to 'Войти', new_session_path
+            %span.icon-bar
+              %span.icon-bar
+                %a.navbar-brand(href='#') Zbattle
+      .navbar-collapse.collapse.navbar-responsive-collapse
+        %ul.nav.navbar-nav
+          %li= link_to 'Новости', news_path
+          %li= link_to 'Баттлы', battles_path
+          %li= link_to 'Стримы', streams_path
+        %ul.nav.navbar-nav.navbar-right.login-buttons
+          - if current_user
+            - if current_admin
+              %li= link_to 'Админка', admin_root_path
+            %li= link_to 'Привет, ' + current_user.name.to_s, root_path
+            %li= link_to 'Выйти', session_path, method: :delete
+          - else
+            %li= link_to 'Регистрация', new_user_path
+            %li= link_to 'Войти', new_session_path
 
 
     .container.main

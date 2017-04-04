@@ -37,12 +37,10 @@ body {
   height: 200px;
   width: 200px;
 
-
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-
 
   font-size: 30px;
 
@@ -67,7 +65,27 @@ body {
   -o-transition: all 0.5s;
 }
 
-.item p {
+.item p.meta {
+  color: rgba(0,0,0,0);
+  cursor: default;
+  font-size: 15px;
+  bottom: -75px;
+  padding-left: 10px;
+
+  position: relative;
+}
+
+.item:hover p.meta {
+  color: rgba(200,200,200,1);
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+.item p.name {
   bottom: -100px;
   position: relative;
   padding-left: 10px;
@@ -91,7 +109,7 @@ body {
   user-select: none;
 }
 
-.item:hover p {
+.item:hover p.name {
   color: rgba(200,200,200,1);
 
   background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */

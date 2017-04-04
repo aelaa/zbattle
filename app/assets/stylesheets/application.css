@@ -72,6 +72,12 @@ body {
   bottom: -67px;
   padding-left: 13px;
 
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+
   position: relative;
 }
 

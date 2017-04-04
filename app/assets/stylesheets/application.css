@@ -79,6 +79,8 @@ body {
   -o-transition: all 0.5s;
 
   position: relative;
+  cursor: default;
+  user-select: none;
 }
 
 .item:hover p.meta {
@@ -100,6 +102,7 @@ body {
   height: 100px;
   color: rgba(0,0,0,0);
   cursor: default;
+  user-select: none;
 
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -112,7 +115,6 @@ body {
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
 }
 
 .item:hover p.name {

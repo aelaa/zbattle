@@ -16,13 +16,9 @@
 
   %body
     .favorite-works
-      #myCarousel.carousel.slide
-        -# { data: { ride: "carousel" }}
-        .item
-          - favorites.flatten.each_with_index do |url, index|
-            .item-item{style: "background-image: url(#{image_url 'cats/' + url})"}
-              .info
-                %p info
+      - favorites.flatten.each_with_index do |url, index|
+        .item{style: "background-image: url(#{image_url 'cats/' + url})"}
+          %p info
 
     .navbar.navbar-inverse.navbar-static-top
       .container

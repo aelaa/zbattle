@@ -1,17 +1,31 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+function favoriteItemWidth() {
+  return $('.favorite-works>.item').first().width()
+}
+
+function favoriteScrollRight() {
+  init = $('.favorite-works').scrollLeft();
+  $('.favorite-works').animate({ scrollLeft: init + favoriteItemWidth() * 2 }, "slow");
+}
+
+function favoriteScrollLeft() {
+  init = $('.favorite-works').scrollLeft();
+  if (init > 0) {
+    $('.favorite-works').animate({ scrollLeft: init - favoriteItemWidth() * 2 }, "slow");
+  }
+}
+
+$('document').ready(function() {
+  $(window).resize(function() {
+    // $('.favorite-works>.item').last().bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+      // init = $('.favorite-works').scrollLeft();
+      // shift = Math.round(init / favoriteItemWidth());
+      // $('.favorite-works').animate({ scrollLeft: init - shift }, "fast");
+  // });
+  });
+});

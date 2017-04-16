@@ -15,6 +15,10 @@
 
 
   %body
+    %a(onclick='favoriteScrollLeft()')
+      left
+    %a(onclick='favoriteScrollRight()')
+      right
     .favorite-works
       - favorites.flatten.each_with_index do |url, index|
         .item{style: "background-image: url(#{image_url 'cats/' + url})"}

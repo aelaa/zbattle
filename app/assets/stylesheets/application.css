@@ -22,15 +22,20 @@ body {
 
 .favorite-works {
   margin-top: 30px;
-  margin-bottom: -15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
+  overflow-x: -moz-scrollbars-none;
   height: 100%;
   width: 100%;
+
+}
+
+.favorite-works::-webkit-scrollbar {
+  display: none;
 }
 
 .favorite-works .item {

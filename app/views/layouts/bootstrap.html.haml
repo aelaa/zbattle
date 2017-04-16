@@ -15,11 +15,11 @@
 
 
   %body
-    %a(onclick='favoriteScrollLeft()')
-      left
-    %a(onclick='favoriteScrollRight()')
-      right
     .favorite-works
+      .favorite-nav.left(onclick='favoriteScrollLeft()')
+        %span <
+      .favorite-nav.right(onclick='favoriteScrollRight()')
+        %span >
       - favorites.flatten.each_with_index do |url, index|
         .item{style: "background-image: url(#{image_url 'cats/' + url})"}
           %p.name SpeedSculpt #46

@@ -9,13 +9,13 @@ function favoriteItemWidth() {
 }
 
 function favoriteScrollRight() {
-  to_scroll = $('.favorite-works').scrollLeft() + favoriteItemWidth() * 2;
+  to_scroll = $('.favorite-works').scrollLeft() + favoriteItemWidth() * 4;
   shift = favoriteItemWidth() * Math.round(to_scroll / favoriteItemWidth());
   $('.favorite-works').stop().animate({ scrollLeft: shift }, "slow");
 }
 
 function favoriteScrollLeft() {
-  to_scroll = $('.favorite-works').scrollLeft() - favoriteItemWidth() * 2;
+  to_scroll = $('.favorite-works').scrollLeft() - favoriteItemWidth() * 4;
   shift = favoriteItemWidth() * Math.round(to_scroll / favoriteItemWidth());
   if (shift > 0) {
     $('.favorite-works').stop().animate({ scrollLeft: shift }, "slow");

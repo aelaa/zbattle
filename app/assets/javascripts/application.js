@@ -9,14 +9,16 @@ function favoriteItemWidth() {
 }
 
 function favoriteScrollRight() {
-  init = $('.favorite-works').scrollLeft();
-  $('.favorite-works').animate({ scrollLeft: init + favoriteItemWidth() * 2 }, "slow");
+  to_scroll = $('.favorite-works').scrollLeft() + favoriteItemWidth() * 2;
+  shift = favoriteItemWidth() * Math.round(to_scroll / favoriteItemWidth());
+  $('.favorite-works').stop().animate({ scrollLeft: shift }, "slow");
 }
 
 function favoriteScrollLeft() {
-  init = $('.favorite-works').scrollLeft();
-  if (init > 0) {
-    $('.favorite-works').animate({ scrollLeft: init - favoriteItemWidth() * 2 }, "slow");
+  to_scroll = $('.favorite-works').scrollLeft() - favoriteItemWidth() * 2;
+  shift = favoriteItemWidth() * Math.round(to_scroll / favoriteItemWidth());
+  if (shift > 0) {
+    $('.favorite-works').stop().animate({ scrollLeft: shift }, "slow");
   }
 }
 

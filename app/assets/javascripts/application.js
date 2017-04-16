@@ -22,7 +22,22 @@ function favoriteScrollLeft() {
   }
 }
 
+semaphore = 0;
+
 $('document').ready(function() {
+  $(window).scroll(function() {
+    if ($(window).scrollTop() >= $('.navbar').offset().top) {
+      if (semaphore == 0) {
+        semaphore = 1;
+        $('footer').animate({ bottom: 0 }, 200, 'linear', function() { semaphore = 0 });
+      }
+    } else {
+      if (semaphore == 0) {
+        semaphore = 1;
+        $('footer').animate({ bottom: -30 }, 200, 'linear', function() { semaphore = 0 });
+      }
+    };
+  });
   $(window).resize(function() {
     // $('.favorite-works>.item').last().bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
       // init = $('.favorite-works').scrollLeft();

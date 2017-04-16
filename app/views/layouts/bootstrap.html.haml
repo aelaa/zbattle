@@ -22,8 +22,9 @@
         %span >
       - favorites.flatten.each_with_index do |url, index|
         .item{style: "background-image: url(#{image_url 'cats/' + url})"}
-          %p.name SpeedSculpt #46
-          %p.meta Vasya Pupkin - 1 place
+          .info
+            .name SpeedSculpt #46
+            .meta Vasya Pupkin - 1 place
 
     .navbar.navbar-inverse.navbar-static-top
       .container

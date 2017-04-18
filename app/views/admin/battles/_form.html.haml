@@ -9,6 +9,8 @@
   .field
     = f.text_field :name, label: 'Имя'
   .field
+    = f.file_field :image, label: 'Обложка'
+  .field
     = f.text_area :description, label: 'Описание'
   .field
     = f.datetime_select :deadline, label: 'Дата окончания'

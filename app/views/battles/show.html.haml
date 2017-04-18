@@ -1,6 +1,7 @@
 .container.show-page
   .row
-    .col-lg-3
+    .col-lg-3.battle-image
+      = image_tag battle.image.url
     .col-lg-4
       %h1= battle.name
       - battle.description.split("\r").each do |p|

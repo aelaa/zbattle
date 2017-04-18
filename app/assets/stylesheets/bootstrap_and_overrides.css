@@ -20,6 +20,8 @@ footer {
 
 .navbar {
   height: 75px;
+  font-size: 30px;
+  padding-top: 10px;
 }
 
 main {
@@ -29,8 +31,24 @@ main {
 .show-page {
   width: 100%;
   background-color: #616161;
+  font-size: 16px;
 }
 
 .login-buttons {
+  font-size: 15px;
   margin-right: 0;
+  top: 0;
+  position: absolute;
+  right: 0;
+}
+
+
+.nav.navbar-nav.menu {
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+}
+
+.navbar-nav>li.active {
+
 }

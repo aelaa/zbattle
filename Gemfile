@@ -21,7 +21,6 @@ gem 'unicorn'
 
 group :development, :test do
   gem 'pry'
-  gem 'byebug'
 end
 
 group :development do

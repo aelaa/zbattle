@@ -1,9 +1,9 @@
 class Battle < ActiveRecord::Base
   scope :current, -> { where('deadline > ?', DateTime.now) }
 
-  has_attached_file :image
+  has_one :image, as: :owner
 
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  accepts_nested_attributes_for :image
 
   def current?
     deadline > DateTime.now

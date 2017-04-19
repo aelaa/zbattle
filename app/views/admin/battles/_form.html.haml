@@ -9,7 +9,9 @@
   .field
     = f.text_field :name, label: 'Имя'
   .field
-    = f.file_field :image, label: 'Обложка'
+    = f.fields_for :image, battle.image || battle.build_image, label: 'Обложка' do |ff|
+      = image_tag '', class: 'image_to_upload'
+      = ff.file_field :image, class: 'photo_upload'
   .field
     = f.text_area :description, label: 'Описание'
   .field

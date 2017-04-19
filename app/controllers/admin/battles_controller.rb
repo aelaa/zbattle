@@ -44,6 +44,6 @@ class Admin::BattlesController < Admin::ApplicationController
     end
 
     def battle_params
-      params.require(:battle).permit(:name, :deadline, :description, :image)
+      params.require(:battle).permit(:name, :deadline, :description, image_attributes: [:id, :image])
     end
 end

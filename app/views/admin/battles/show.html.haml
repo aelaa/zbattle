@@ -2,7 +2,7 @@
 
 %p
   %b Обложка:
-  = image_tag battle.image.url
+  = image_tag battle.image.try(:url)
 %p
   %b Имя:
   = battle.name

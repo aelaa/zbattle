@@ -14,16 +14,11 @@
  *= require_self
  */
 
-.main {
+body {
+  font-family: 'Poiret One';
+  font-weight: bold;
 }
 
-footer {
-  position: fixed;
-  bottom: -30px;
-  width: 100vw;
-  background-color: #222;
-  border: 1px solid black;
-}
 
 .content-item {
   /* background-color: #aaa; */

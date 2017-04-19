@@ -14,11 +14,6 @@
  *= require_self
  */
 
-body {
-  font-family: 'Poiret One';
-  font-weight: bold;
-}
-
 
 .content-item {
   /* background-color: #aaa; */

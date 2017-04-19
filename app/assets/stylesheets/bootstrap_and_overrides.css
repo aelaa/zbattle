@@ -41,6 +41,7 @@ footer {
 
 .navbar {
   font-size: 20px;
+  user-select: none;
 }
 
 main {

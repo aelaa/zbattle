@@ -19,4 +19,7 @@ class StaticController < ApplicationController
       streams: Stream.all
     }
   end
+
+  def faq
+  end
 end

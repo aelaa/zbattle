@@ -14,20 +14,7 @@
  *= require_self
  */
 
-body {
-  min-width: 1300px;
-  /* background-color: #525252; */
-  overflow-x: hidden;
-}
-
-.navbar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-}
-
 .main {
-  height: 2000px;
 }
 
 footer {

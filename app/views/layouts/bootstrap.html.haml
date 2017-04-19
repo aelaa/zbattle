@@ -27,7 +27,7 @@
             .name SpeedSculpt #46
             .meta Vasya Pupkin - 1 place
 
-    .navbar.navbar-inverse.navbar-static-top
+    .navbar.navbar-default.navbar-static-top
       .container
         %button.navbar-toggle(type='button' data-toggle='collapse' data-target='.navbar-responsive-collapse')
           %span.icon-bar
@@ -39,15 +39,16 @@
           %li= link_to 'Новости', news_path
           %li= link_to 'Баттлы', battles_path
           %li= link_to 'Стримы', streams_path
+          %li= link_to 'FAQ', streams_path
         %ul.nav.navbar-nav.navbar-right.login-buttons
           - if current_user
             - if current_admin
               %li= link_to 'Админка', admin_root_path
             %li= link_to 'Привет, ' + current_user.name.to_s, root_path
             %li= link_to 'Выйти', session_path, method: :delete
-          - else
-            %li= link_to 'Регистрация', new_user_path
-            %li= link_to 'Войти', new_session_path
+          -# - else
+            -# %li= link_to 'Регистрация', new_user_path
+            -# %li= link_to 'Войти', new_session_path
 
 
     .container.main

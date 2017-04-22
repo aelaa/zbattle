@@ -4,30 +4,42 @@
 //= require turbolinks
 //= require_tree .
 
-function favoriteItemWidth() {
+semaphore = 0;
+
+favoriteItemWidth = function() {
   return $('.favorite-works>.item').first().width()
 }
 
-function favoriteScrollRight() {
-  to_scroll = $('.favorite-works').scrollLeft() + favoriteItemWidth() * 4;
-  shift = favoriteItemWidth() * Math.round(to_scroll / favoriteItemWidth());
-  $('.favorite-works').stop().animate({ scrollLeft: shift }, "slow");
+favoriteScrollRight = function() {
+  to_scroll = $('.favorite-works').scrollLeft() + favoriteItemWidth() * 4
+  shift = favoriteItemWidth() * Math.round(to_scroll / favoriteItemWidth())
+  $('.favorite-works').stop().animate({ scrollLeft: shift }, "slow")
 }
 
-function favoriteScrollLeft() {
-  to_scroll = $('.favorite-works').scrollLeft() - favoriteItemWidth() * 4;
-  shift = favoriteItemWidth() * Math.round(to_scroll / favoriteItemWidth());
-  if (shift >= 0) {
-    $('.favorite-works').stop().animate({ scrollLeft: shift }, "slow");
-  }
+favoriteScrollLeft = function() {
+  to_scroll = $('.favorite-works').scrollLeft() - favoriteItemWidth() * 4
+  shift = favoriteItemWidth() * Math.round(to_scroll / favoriteItemWidth())
+  if (shift >= 0)
+    $('.favorite-works').stop().animate({ scrollLeft: shift }, "slow")
 }
 
-semaphore = 0;
+$('document').ready( function() {
+  $(window).resize( function() {
+    $('.favorite-works>.item').last().bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(e) {
+      init = $('.favorite-works').scrollLeft()
+      number = Math.round(init / favoriteItemWidth())
+      $('.favorite-works').animate({ scrollLeft: number * favoriteItemWidth() }, "fast")
+      $('.favorite-works>.item').last().unbind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd")
+    })
+  })
+})
 
 document.addEventListener("turbolinks:load", function() {
   path = document.URL.split('/')[3]
-  $(".navbar-nav>li.active").removeClass("active");
-  $(".navbar-nav>li#" + path).addClass("active");
+  if (path) {
+    $(".navbar-nav>li.active").removeClass("active");
+    $(".navbar-nav>li#" + path).addClass("active");
+  }
 })
 
 $('document').ready(function() {
@@ -43,12 +55,5 @@ $('document').ready(function() {
         $('footer').animate({ bottom: -30 }, 200, 'linear', function() { semaphore = 0 });
       }
     };
-  });
-  $(window).resize(function() {
-    // $('.favorite-works>.item').last().bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-      // init = $('.favorite-works').scrollLeft();
-      // shift = Math.round(init / favoriteItemWidth());
-      // $('.favorite-works').animate({ scrollLeft: init - shift }, "fast");
-  // });
   });
 });

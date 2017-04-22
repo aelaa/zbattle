@@ -34,15 +34,15 @@
           %li
             %a.navbar-brand(href='#')
               = image_tag image_path('logo.png'), height: 20
-          %li= link_to 'Новости', news_path
-          %li= link_to 'Баттлы', battles_path
-          %li= link_to 'Стримы', streams_path
-          %li= link_to 'Туторы', streams_path
-          %li= link_to 'FAQ', streams_path
+          %li#news= link_to 'Новости', news_path
+          %li#battles= link_to 'Баттлы', battles_path
+          %li#streams= link_to 'Стримы', streams_path
+          %li#tutors= link_to 'Туторы', streams_path
+          %li#faq= link_to 'FAQ', streams_path
         %ul.nav.navbar-nav.navbar-right.login-buttons
           - if current_user
             - if current_admin
-              %li= link_to 'Админка', admin_root_path
+              %li= link_to 'Админка', admin_root_path, data: { turbolinks: false }
             %li= link_to 'Привет, ' + current_user.name.to_s, root_path
             %li= link_to 'Выйти', session_path, method: :delete
           - else

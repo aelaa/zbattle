@@ -24,6 +24,12 @@ function favoriteScrollLeft() {
 
 semaphore = 0;
 
+document.addEventListener("turbolinks:load", function() {
+  path = document.URL.split('/')[3]
+  $(".navbar-nav>li.active").removeClass("active");
+  $(".navbar-nav>li#" + path).addClass("active");
+})
+
 $('document').ready(function() {
   $(window).scroll(function() {
     if ($(window).scrollTop() >= $('.navbar').offset().top) {

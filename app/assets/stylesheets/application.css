@@ -30,3 +30,8 @@ body {
   width: 100%;
   /* background-color: #aaa; */
 }
+
+.turbolinks-progress-bar {
+  background-color: red !important;
+  height: 5px !important;
+}

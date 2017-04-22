@@ -32,6 +32,6 @@ body {
 }
 
 .turbolinks-progress-bar {
-  background-color: red !important;
+  background-color: #f1232d !important;
   height: 5px !important;
 }

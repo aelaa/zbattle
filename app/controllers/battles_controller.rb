@@ -6,6 +6,10 @@ class BattlesController < ApplicationController
   end
 
   def show
-    render locals: { battle: Battle.find(params[:id]) }
+    battle = Battle.find(params[:id])
+    render locals: {
+      battle: battle,
+      work: current_user.battle_works.new(battle: battle)
+    }
   end
 end

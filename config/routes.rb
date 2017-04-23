@@ -16,6 +16,11 @@ Rails.application.routes.draw do
 
     resources :battles
     resources :news_articles, path: :news
+    resources :battle_works
+  end
+
+  namespace :api do
+    resources :battle_works, only: :create
   end
 
   resources :battles, only: [:index, :show]

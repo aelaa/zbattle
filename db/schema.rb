@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170418151505) do
 
   create_table "battle_works", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "battle_id"
     t.text     "description"
     t.string   "software"
     t.datetime "created_at",  null: false
@@ -28,15 +29,15 @@ ActiveRecord::Schema.define(version: 20170418151505) do
     t.string   "name"
     t.text     "description"
     t.datetime "deadline"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "images", force: :cascade do |t|
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
     t.integer  "owner_id"
     t.string   "owner_type"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

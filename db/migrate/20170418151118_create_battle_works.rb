@@ -2,6 +2,7 @@ class CreateBattleWorks < ActiveRecord::Migration
   def change
     create_table :battle_works do |t|
       t.references :user
+      t.references :battle
       t.text :description
       t.string :software
 

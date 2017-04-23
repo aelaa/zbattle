@@ -4,4 +4,5 @@ class Battle::Work < ActiveRecord::Base
   accepts_nested_attributes_for :images
 
   belongs_to :user
+  belongs_to :battle
 end

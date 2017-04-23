@@ -101,6 +101,39 @@ main {
   height: 150px;
 }
 
+.image {
+  border: 8px solid #333;
+  border-radius: 10px;
+  margin: 4px;
+}
+
+.image-loader {
+  height: 276px;
+  padding: 10px;
+  display: flex;
+}
+
+.image-loader>div {
+  flex-grow: 1;
+}
+
+.image-loader div:last {
+  display: flex;
+}
+
+.image-loader div:last div {
+  height: 100%;
+}
+
+.image-rows>div {
+  height: 50%;
+  display: flex;
+}
+
+.image-rows>div>div {
+  flex-grow: 1;
+}
+
 #work_form textarea {
   font-size: 20px;
   font-weight: normal;

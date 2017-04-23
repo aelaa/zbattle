@@ -43,6 +43,10 @@ document.addEventListener("turbolinks:load", function() {
 })
 
 $('document').ready(function() {
+  $(".image").click(function() {
+    alert();
+  });
+
   $(window).scroll(function() {
     if ($(window).scrollTop() >= $('.navbar').offset().top) {
       if (semaphore == 0) {

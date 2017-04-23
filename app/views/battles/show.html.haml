@@ -6,7 +6,7 @@
       %h1= battle.name
       - battle.description.split("\r").each do |p|
         %p= p
-      - if battle.current?
+      - if battle.current? || work
         %button.btn.btn-primary{ data: { toggle: 'modal', target: '#work_form' }} participate
     .col-lg-5
 

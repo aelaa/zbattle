@@ -9,7 +9,7 @@ class BattlesController < ApplicationController
     battle = Battle.find(params[:id])
     render locals: {
       battle: battle,
-      work: current_user.battle_works.new(battle: battle) if current_user
+      work: (current_user.battle_works.new(battle: battle) if current_user)
     }
   end
 end

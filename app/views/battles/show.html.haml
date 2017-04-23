@@ -10,25 +10,26 @@
         %button.btn.btn-primary{ data: { toggle: 'modal', target: '#work_form' }} participate
     .col-lg-5
 
-.modal.fade#work_form{ tabindex: "-1", role: "dialog", 'aria-labelledby' => 'myModalLabel' }
-  .modal-dialog{ role: 'document'}
-    .modal-content
-      .modal-body
-        = form_for work, url: api_battle_works_path(battle_id: battle.id) do |f|
-          .image-loader
-            .image.image-big
-            .image-rows
-              .image-rows-one
-                .image.image-one-one
-                .image.image-one-two
-              .image-rows-two
-                .image.image-two-one
-                .image.image-two-two
-          .form-wrap
-            Описание:
-            = f.text_area :description, class: 'work_form-description'
-          .form-wrap
-            Софт:
-            = f.text_area :software
-          .form-wrap.submit
-            = f.submit 'Отправить'
+- if work
+  .modal.fade#work_form{ tabindex: "-1", role: "dialog", 'aria-labelledby' => 'myModalLabel' }
+    .modal-dialog{ role: 'document'}
+      .modal-content
+        .modal-body
+          = form_for work, url: api_battle_works_path(battle_id: battle.id) do |f|
+            .image-loader
+              .image.image-big
+              .image-rows
+                .image-rows-one
+                  .image.image-one-one
+                  .image.image-one-two
+                .image-rows-two
+                  .image.image-two-one
+                  .image.image-two-two
+            .form-wrap
+              Описание:
+              = f.text_area :description, class: 'work_form-description'
+            .form-wrap
+              Софт:
+              = f.text_area :software
+            .form-wrap.submit
+              = f.submit 'Отправить'
